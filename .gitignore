@@ -1,0 +1,6 @@
+# This repository carries documentation and release metadata only.
+# Installers are attached to GitHub Releases, never committed.
+*.AppImage
+*.dmg
+*.exe
+*.zip
