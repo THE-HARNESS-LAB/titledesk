@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TitleDesk has moved</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0;url=https://title-desk.com/">
+  <link rel="canonical" href="https://title-desk.com/">
+  <script>
+    (function () {
+      var dest = "https://title-desk.com" + location.pathname + location.search + location.hash;
+      location.replace(dest);
+    })();
+  </script>
+</head>
+<body>
+  <p>TitleDesk now lives at <a id="dest" href="https://title-desk.com/">https://title-desk.com/</a>.</p>
+  <script>
+    document.getElementById("dest").href = "https://title-desk.com" + location.pathname + location.search + location.hash;
+  </script>
+</body>
+</html>
