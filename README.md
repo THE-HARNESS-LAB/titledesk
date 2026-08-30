@@ -41,9 +41,9 @@ rows, unsupported findings, and deliverable corrections against your existing pr
 
 | Your computer | File | Notes |
 |---|---|---|
-| **Windows 10 / 11** (64-bit) | `TitleDesk-Agent-0.1.2-win-x64-Setup.exe` | Unsigned NSIS installer; verify the checksum |
-| **macOS 12+** (Apple Silicon) | `TitleDesk-Agent-0.1.2-mac-arm64-UNSIGNED-EVALUATION.dmg` | Separate Intel (`x64`) DMG is also published |
-| **Linux** (64-bit x86) | `TitleDesk-Agent-0.1.2-linux-x86_64.AppImage` | Single file, no installation |
+| **Windows 10 / 11** (64-bit) | `TitleDesk-Agent-0.1.3-win-x64-Setup.exe` | Unsigned NSIS installer; verify the checksum |
+| **macOS 12+** (Apple Silicon) | `TitleDesk-Agent-0.1.3-mac-arm64-UNSIGNED-EVALUATION.dmg` | Separate Intel (`x64`) DMG is also published |
+| **Linux** (64-bit x86) | `TitleDesk-Agent-0.1.3-linux-x86_64.AppImage` | Single file, no installation |
 
 **[→ Go to the latest release](../../releases/latest)**
 

@@ -136,4 +136,4 @@ and shows which destinations are currently allowed to receive data.
 > [sales@theharnesslab.com](mailto:sales@theharnesslab.com) with the app version
 > and a screenshot that contains no title documents, credentials, or activation secrets.
 
-  **The Harness Lab** · TitleDesk Agent 0.1.2
+  **The Harness Lab** · TitleDesk Agent 0.1.3
