@@ -1,7 +1,8 @@
 # Security and privacy
 
-The short version: **your title documents stay on your computer.** TitleDesk is
-a desktop application, not a web service with a desktop wrapper.
+The short version: **your title documents stay on your computer unless you
+explicitly send selected content to a connected service.** TitleDesk is a
+desktop application, not a web service with a desktop wrapper.
 
 For the formal document, see the
 [privacy policy](https://title-desk.com/privacy/).
@@ -10,16 +11,19 @@ For the formal document, see the
 
 | | Leaves your computer? |
 |---|---|
-| Title documents, scans, county records | **No** |
-| OCR text and extractions | **No** — OCR runs locally (Tesseract) |
-| Ownership calculations, runsheets, reports | **No** |
-| Project files and folders | **No** |
+| Title documents, scans, county records | **No by default** — selected content leaves only when you explicitly send it to a connected service |
+| OCR text and extractions | **No by default** — OCR runs locally (Tesseract) |
+| Ownership calculations, runsheets, reports | **No by default** — a report leaves only when you explicitly export or upload it |
+| Project files and folders | **No by default** — selected files leave only when you explicitly send or upload them |
 | Licence activation (device fingerprint, licence status) | Yes — to the licence server |
 | Content you explicitly send to a connected AI | Yes — to the AI provider you chose |
 | Files you sync to a Drive workspace you connected | Yes — to your own Google Drive |
+| Data you explicitly send through an approved connector | Yes — to the HTTPS host you approved |
 
-Nothing in the first group has a code path off the machine. TitleDesk reads only
-folders you approve, never modifies originals, and writes to the project's own
+The first group stays local during ordinary work. When you deliberately invoke
+AI, a personal-Drive upload, or an approved connector, selected content can leave
+the machine for that requested operation. TitleDesk reads only folders you
+approve, never modifies originals, and writes local output to the project's own
 output folder.
 
 ## Working with no AI at all
@@ -46,8 +50,11 @@ if nothing may leave the machine at all — see [choosing an AI](choosing-an-ai.
 
 Drive is optional. When connected, TitleDesk distinguishes two things:
 
-- **Company workspaces** — read-only by default. TitleDesk reads the company's
-  records; it does not write into them unless the company has granted that.
+- **Company workspaces** — TitleDesk treats them as read-only. The Google token
+  uses the narrow `drive.file` Picker scope, which limits access to selected or
+  app-created items but is not technically a read-only scope. The read-only
+  guarantee is enforced by TitleDesk's application rules and database guards;
+  TitleDesk does not issue writes to a company Drive.
 - **Your personal workspace** — writing requires your explicit approval at the
   time it happens.
 

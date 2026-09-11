@@ -1,15 +1,22 @@
 # Install TitleDesk on Linux
 
-TitleDesk ships for Linux as an **AppImage** — a single file that runs without
+The archived Linux artifact is an **AppImage** — a single file that runs without
 installation and without root.
 
 **Requires:** a 64-bit x86 Linux desktop (Ubuntu 22.04+, Fedora 38+, Debian 12+
-or similar). About 700 MB free.
+or similar), about 700 MB free, and an unlocked GNOME Keyring/libsecret or
+KWallet session. TitleDesk refuses to fall back to plaintext storage when no
+secure keyring is available.
 
-## 1. Download
+> **Current status:** Linux is outside the current macOS customer release. Public
+> v0.1.3 has no current clean-profile Linux runtime qualification. Do not deploy the
+> archived AppImage for customer work.
 
-Get `TitleDesk-Agent-<version>-linux-x86_64.AppImage` from the
-[Releases page](../../releases).
+## 1. Obtain a qualified build
+
+Use only a build supplied with a release-specific qualification record. The
+[v0.1.3 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.1.3)
+is retained as an archive, not as the current customer download.
 
 ## 2. Verify what you downloaded
 
@@ -79,6 +86,10 @@ Or run it without FUSE:
 
 **A sandbox error mentioning `SUID`** — some distributions restrict unprivileged
 user namespaces. Running with `--appimage-extract-and-run` usually clears it.
+
+**A secure-storage or keyring error** — unlock your desktop login keyring and
+open TitleDesk again. On a minimal desktop, install and start GNOME
+Keyring/libsecret or KWallet before activating.
 
 Anything else: email [sales@theharnesslab.com](mailto:sales@theharnesslab.com)
 with the terminal output.

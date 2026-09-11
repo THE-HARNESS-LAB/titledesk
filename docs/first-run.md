@@ -2,7 +2,13 @@
 
 *Everything from first launch to reading a real assignment*
 
-> Roughly fifteen minutes. Install and activate first (see the installation guide), then work through the steps below in order. Everything here is reversible, and TitleDesk asks before it does anything that reaches outside your computer.
+> **Build status:** This guide describes the current product workflow. Public v0.1.3
+> is an unqualified archive and does not contain the current customer workflow. Use
+> this guide only with a build supplied with a current qualification record.
+
+> Install and activate first (see the installation guide), then work through the
+> steps below in order. Activation and periodic licence checks require a network
+> connection. AI use, Drive uploads and connector actions are user-initiated.
 
 ## Step 1. Let the onboarding agent lead — **Getting started ★**
 
@@ -24,17 +30,13 @@ Open **Settings** and find **AI provider**.
 Choose one under **Primary provider**, then
 **Choose a model…**:
 
-| Option | Use when
-
-| ChatGPT / Codex subscription | You already pay for one. TitleDesk opens the official sign-in; it never sees your password or tokens.
-
-| Claude subscription | Same — official sign-in, no stored credentials.
-
-| Your own API key | Anthropic, OpenAI or a custom endpoint. Entered under **AI service keys** and stored in the system keychain.
-
-| Local model (Ollama) | Nothing may leave the machine at all. Quality depends on the model you download.
-
-| **No AI — local features only** | You want to evaluate TitleDesk with no model connected. Everything below still works; summaries are just shorter.
+| Option | Use when |
+|---|---|
+| ChatGPT / Codex subscription | You already pay for one. TitleDesk opens the official sign-in; it never sees your password or tokens. |
+| Claude subscription | Same — official sign-in, no stored credentials. |
+| Your own API key | Anthropic, OpenAI or a custom endpoint. Entered under **AI service keys** and stored in the system keychain. |
+| Local model (Ollama) | Nothing may leave the machine at all. Quality depends on the model you download. |
+| **No AI — local features only** | You want to evaluate TitleDesk with no model connected. Core local processing remains available; model-written summaries are omitted. |
 
 While you are on this screen, look at What the AI is allowed to
 do. Those permissions are yours to set, and the AI cannot exceed them.
@@ -47,16 +49,18 @@ Open **Connections** and go to
 **Folders & Google Drive**. Choose
 **Using Google Drive?** and sign in.
 
-> Read Google's consent screen before continuing. A company Drive connection
-> should request read-only Drive access; a personal output Drive may request
-> write access. If Google displays an unverified-app warning, or the requested
-> scopes do not match what your organization approved, stop and contact
+> Read Google's consent screen before continuing. TitleDesk uses Google's
+> `drive.file` Picker scope for both company and personal Drive connections. It
+> limits access to items you select or TitleDesk creates, but it is not technically
+> a read-only scope. Company-Drive writes are refused by TitleDesk's application
+> rules and database guards. If Google displays an unverified-app warning, or the
+> requested scope does not match what your organization approved, stop and contact
 > [sales@theharnesslab.com](mailto:sales@theharnesslab.com). Do not bypass a
 > security warning on the strength of this guide.
 
 You will be asked **Whose Google Drive is this?**:
-- **My company's Drive** — connected **read-only**.
-  TitleDesk reads the records; it does not write into company folders.
+- **My company's Drive** — treated as **read-only by TitleDesk**.
+  TitleDesk reads Picker-selected records and does not issue writes to company folders.
 - **My own Drive** — writing is possible, and each write asks
   for your approval at the time it happens.
 
@@ -72,8 +76,10 @@ clerk subscription, a records provider, or an internal system of your own.
 - Say **What is it?** — e.g. "County clerk subscription".
 - Optionally record **Why is it approved?** for your own audit trail.
 
-If that list is empty, TitleDesk **refuses to send anywhere at all**.
-Nothing reaches an outside system until you have named it here.
+If that list is empty, TitleDesk **refuses to send through an app connector**.
+Connector data does not reach an outside system until you have named its HTTPS
+host here. AI, Drive, licensing and research destinations have their own visible
+controls described elsewhere in this guide.
 
 Sign-ins for those systems go under Company & personal
 credentials (**Username**,

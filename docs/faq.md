@@ -1,10 +1,17 @@
 # Frequently asked questions
 
+### Can I download the current customer build?
+
+Not yet. Customer downloads and self-service checkout are paused while the current
+build completes packaged and native-platform qualification. Public v0.1.3 is an
+engineering-evaluation archive, not the current customer release.
+
 ### Do my title documents go to the cloud?
 
-No. OCR, extraction, ownership arithmetic and report generation all run on your
-computer. See [security and privacy](security-and-privacy.md) for the full
-breakdown of what does and does not leave the machine.
+Not during ordinary local work. OCR, extraction, ownership arithmetic and report
+generation run on your computer. Selected content leaves only when you explicitly
+send it to a connected AI, personal Drive, or approved connector. See
+[security and privacy](security-and-privacy.md) for the full breakdown.
 
 ### Does it need an internet connection?
 
@@ -19,7 +26,7 @@ No. TitleDesk is fully functional with no AI account connected. See
 
 ### Can I install it on more than one computer?
 
-Current Individual and Enterprise purchases are counted per device: one seat is
+Current Solo and Enterprise purchases are counted per device: one seat is
 one licensed computer. Some earlier contracts retain their original device
 allowance; see [pricing](https://title-desk.com/#buy).
 
@@ -50,14 +57,15 @@ it came from. The AI proposes; the landman decides.
 
 ### What happens when my licence expires?
 
-TitleDesk stops opening. Your project files are yours and stay on your disk in
-their existing folders — nothing is deleted or held hostage.
+TitleDesk switches to restricted, read-only operation. Existing work remains
+readable and exportable, and your project files stay on disk; creating or changing
+work requires an active licence.
 
 ### My activation link expired.
 
-They are single-use and last ten minutes. Email
-[sales@theharnesslab.com](mailto:sales@theharnesslab.com) and we will reissue —
-there is no limit.
+Paid-purchase activation links are single-use and last ten minutes. Evaluation
+invitations remain redeemable until the deadline stated in the invitation. Email
+[sales@theharnesslab.com](mailto:sales@theharnesslab.com) if you need a new link.
 
 ### The activation email never arrived.
 

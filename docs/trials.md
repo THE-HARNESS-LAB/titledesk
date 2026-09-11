@@ -1,9 +1,10 @@
 # Evaluating TitleDesk
 
-TitleDesk is licensed software. To evaluate it, you need a trial licence — we
-issue it directly, and it expires on its own.
+TitleDesk is licensed software. New evaluation fulfillment is temporarily paused
+while the current customer build completes packaged and native-platform qualification.
+Public v0.1.3 is an engineering-evaluation archive, not the current customer release.
 
-## How to request one
+## How to register interest
 
 Email **[sales@theharnesslab.com](mailto:sales@theharnesslab.com)** with:
 
@@ -11,7 +12,8 @@ Email **[sales@theharnesslab.com](mailto:sales@theharnesslab.com)** with:
 - Which platform (Windows, macOS or Linux)
 - Roughly how many people would be evaluating
 
-You will get back a one-time activation link, usually the same day.
+We will reply with current availability. No activation link or customer build is
+promised until the relevant package passes qualification.
 
 ## How a trial licence behaves
 
@@ -19,8 +21,8 @@ You will get back a one-time activation link, usually the same day.
   no card required.
 - **Tied to your computer.** The activation binds to the machine you activate
   on. Tell us if you need to move it.
-- **Fully functional.** A trial is not a reduced build. You are evaluating the
-  real thing on real files.
+- **Current workflow.** A qualified trial is intended to exercise the same workflow
+  as the corresponding customer build; its time limit is the licensing difference.
 - **Works offline.** Once activated, TitleDesk keeps working without a network
   connection for an extended period, so a trial in a courthouse basement does
   not fail.
@@ -32,8 +34,9 @@ You will get back a one-time activation link, usually the same day.
    [Linux](install-linux.md).
 2. Open the activation link from your email **on the computer where TitleDesk is
    installed**, or paste the code into the activation screen.
-3. Activation links are single-use and expire in **ten minutes**. If yours has
-   expired, reply and we will reissue it — there is no limit on reissues.
+3. The activation link is single-use and remains redeemable until the deadline
+   stated in your invitation. If it has expired, email
+   [sales@theharnesslab.com](mailto:sales@theharnesslab.com) for a new link.
 
 Activation email comes from **`licenses@theharnesslab.com`**. If it has not
 arrived after ten minutes, check spam, then email us.
@@ -44,7 +47,8 @@ Almost nothing, by design.
 
 The licence server records that a licence was activated and on which device
 fingerprint. **It does not receive your documents, your project data, your
-ownership calculations or your reports.** Those never leave your computer. See
+ownership calculations or your reports.** Optional AI, Drive and connector
+transfers are separate and are described in
 [security and privacy](security-and-privacy.md).
 
 ## After the trial
@@ -54,7 +58,9 @@ If TitleDesk earns its place, plans and checkout are on the
 carry straight over — a paid licence activates on the same installation and the
 same data.
 
-If it does not, the licence simply expires. There is nothing to cancel.
+If it does not, the licence expires and TitleDesk switches to restricted,
+read-only operation. Existing work remains readable and exportable. There is
+nothing to cancel.
 
 ## Evaluating across a land department
 

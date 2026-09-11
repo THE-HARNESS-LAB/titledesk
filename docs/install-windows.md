@@ -2,10 +2,15 @@
 
 **Requires:** Windows 10 or 11, 64-bit. About 700 MB free.
 
-## 1. Download
+> **Current status:** Windows customer downloads are paused. Public v0.1.3 is an
+> unsigned engineering-evaluation archive with no current native Windows install,
+> SmartScreen, or end-to-end workflow qualification. Do not deploy it for customer work.
 
-Get `TitleDesk-Agent-<version>-win-x64-Setup.exe` from the
-[Releases page](../../releases).
+## 1. Obtain a qualified build
+
+Use only a build supplied with a release-specific qualification record. The
+[v0.1.3 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.1.3)
+is retained as an archive, not as the current customer download.
 
 ## 2. Verify what you downloaded
 
@@ -36,16 +41,15 @@ Activation emails come from **`licenses@theharnesslab.com`**.
 
 ## About SmartScreen
 
-The current public installer is not code-signed. Windows may show *"Windows
-protected your PC."*
+An unsigned installer may cause Windows to show *"Windows protected your PC."*
 
-If you have verified the SHA256 above and the file came from this Releases page:
-click **More info → Run anyway**.
+Do not use **More info → Run anyway** as a substitute for current native qualification
+or an organizational approval. A checksum verifies file identity, not release readiness.
 
 If you are deploying across a company and would rather not have your landmen see
 that prompt at all, contact
-[sales@theharnesslab.com](mailto:sales@theharnesslab.com) — we can supply builds
-suited to managed deployment.
+[sales@theharnesslab.com](mailto:sales@theharnesslab.com) to confirm the current
+code-signing status and managed-deployment options before rollout.
 
 ## If it will not install
 

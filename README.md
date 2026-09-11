@@ -5,11 +5,11 @@
 <p align="center">
   <strong>The title workstation for petroleum landmen.</strong><br>
   Reads the records, builds the chain, computes ownership exactly, and produces the
-  deliverable — on your own computer, with every number traceable to its source page.
+  deliverable — on your own computer, with material figures linked to their source pages.
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><strong>⬇︎ Download for Windows, macOS or Linux</strong></a><br>
+  <a href="#build-qualification"><strong>Build qualification status</strong></a><br>
   <sub>
     <a href="https://title-desk.com/">Product site</a> ·
     <a href="https://title-desk.com/#buy">Pricing</a> ·
@@ -37,20 +37,25 @@ rows, unsupported findings, and deliverable corrections against your existing pr
 
 ---
 
-## Download
+## Build qualification
 
-| Your computer | File | Notes |
-|---|---|---|
-| **Windows 10 / 11** (64-bit) | `TitleDesk-Agent-0.1.3-win-x64-Setup.exe` | Unsigned NSIS installer; verify the checksum |
-| **macOS 12+** (Apple Silicon) | `TitleDesk-Agent-0.1.3-mac-arm64-UNSIGNED-EVALUATION.dmg` | Separate Intel (`x64`) DMG is also published |
-| **Linux** (64-bit x86) | `TitleDesk-Agent-0.1.3-linux-x86_64.AppImage` | Single file, no installation |
+Customer downloads are temporarily unavailable while the current customer build completes
+packaged and native-platform qualification. Public release v0.1.3 is an archive for
+engineering evaluation. It is not the current customer release and should not be deployed
+for production work.
 
-**[→ Go to the latest release](../../releases/latest)**
+| Archived v0.1.3 target | Current audit status |
+|---|---|
+| **macOS 12+** (Apple Silicon) | Reached the activation screen in an isolated smoke test, but lacks the current customer workflow and remains unsigned and unnotarized |
+| **macOS** (Intel) | Has not passed native Intel execution; the archive contains an arm64-only native dependency |
+| **Windows 10 / 11** (64-bit) | Has no current native install, SmartScreen, or end-to-end workflow qualification and is unsigned |
+| **Linux** (64-bit x86) | Has no current clean-profile runtime qualification and is outside the current macOS customer release |
 
-Every release publishes a `SHA256SUMS` manifest listing the fingerprint of each file, so
-you can confirm what you downloaded is exactly what was published. Windows and macOS
-code signing is in progress; until it completes, verifying that checksum is what
-establishes the file is genuine.
+**[View the archived v0.1.3 release record](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.1.3)**
+
+The archive includes a `SHA256SUMS` manifest. A matching checksum establishes which bytes
+were published; it does not establish that the installer is signed, current, compatible
+with a computer, or qualified for customer work.
 
 **Install guides:** [Windows](docs/install-windows.md) ·
 [macOS](docs/install-macos.md) · [Linux](docs/install-linux.md) ·
@@ -65,9 +70,9 @@ establishes the file is genuine.
 - **On-device OCR.** Scanned county records are rasterised and read on your machine. No
   upload, no cloud queue, no per-page cost, and no account required to read a document.
 - **Text-layer PDFs are read directly**, without needless OCR.
-- **Built for real county packages.** A pool of OCR workers runs alongside several
-  documents in flight, because most county records are one to three pages and would
-  otherwise leave the pool idle. Hundreds of pages import without appearing to hang.
+- **Built for multi-document county packages.** A pool of OCR workers keeps several
+  documents in flight, and the interface reports document and page progress while the
+  packet is processed. Throughput depends on scan quality and the customer's hardware.
 - **Duplicate-safe.** Concurrent reads of the same scan coalesce on content hash, so a
   document that arrives twice is extracted once and flagged as a copy of the original.
 - **Progress only moves forwards**, even though documents finish out of order.
@@ -164,13 +169,14 @@ version:
 
 | | Leaves your computer? |
 |---|---|
-| Title documents, scans, county records | **No** |
-| OCR text and extractions | **No** |
-| Ownership calculations, runsheets, reports | **No** |
-| Project files and folders | **No** |
+| Title documents, scans, county records | **No by default** — selected content leaves only when you explicitly send it to a connected service |
+| OCR text and extractions | **No by default** — selected content leaves only when you explicitly send it to a connected service |
+| Ownership calculations, runsheets, reports | **No by default** — a report leaves only when you explicitly export or upload it |
+| Project files and folders | **No by default** — selected files leave only when you explicitly send or upload them |
 | Licence activation (device fingerprint, licence status) | Yes — to the licence service only |
 | Content you explicitly send to a connected AI | Yes — to the provider you chose |
 | Files you sync to a Drive workspace you connected | Yes — to your own Google Drive |
+| Data you explicitly send through an approved connector | Yes — to the HTTPS host you approved |
 
 - **Encrypted at rest** with AES-256-GCM, the key held in the operating system's own
   keychain — Keychain on macOS, DPAPI on Windows, libsecret on Linux. Copying the
@@ -178,11 +184,13 @@ version:
   keychain is unavailable rather than quietly falling back to plaintext.
 - **The activity log is append-only**, enforced by database triggers. The application
   itself cannot alter or delete an entry.
-- **Company Google Drive is read-only at the token**, not by policy. The access token is
-  minted with a read-only scope, so Google itself refuses a write. There is no sequence
-  of clicks that turns it on.
-- **Outbound destinations are allow-listed.** Until you name a host, TitleDesk refuses to
-  send anywhere at all.
+- **Company Google Drive is treated as read-only by TitleDesk.** Both company and
+  personal Drive connections use Google's narrow `drive.file` Picker scope, limited to
+  items the user selects or the app creates. That Google scope is not itself read-only;
+  TitleDesk's application rules and database guards refuse company-Drive writes.
+- **App-connector destinations are allow-listed.** Until you approve a connector host,
+  TitleDesk refuses to send data through that connector. AI, Drive, licensing and research
+  destinations have their own visible controls.
 
 ### Working with AI — or without it
 
@@ -230,6 +238,8 @@ and by whom, what the deliverable must contain, which sources are authoritative.
 
 - **Windows** 10 or 11, 64-bit · **macOS** 12 (Monterey) or later · **Linux** 64-bit
 - About 700 MB free
+- Linux requires an unlocked GNOME Keyring/libsecret or KWallet session; TitleDesk will
+  not fall back to plaintext storage if secure storage is unavailable
 - **No internet required** for ordinary work. Activation needs a connection once, then
   TitleDesk keeps working offline for an extended period — a day in a courthouse
   basement with no signal will not lock you out.
@@ -238,13 +248,14 @@ and by whom, what the deliverable must contain, which sources are authoritative.
 
 ## Try it
 
-TitleDesk is commercial software; every copy activates against a licence.
+TitleDesk is commercial software; customer builds activate against a licence. New
+evaluation and purchase fulfillment is paused until the current customer build finishes
+qualification.
 
-- **Evaluating?** [Request an evaluation licence](docs/trials.md). It is the full
-  application, not a reduced build, it is time-limited, and it expires on its own —
-  nothing to cancel and no card required.
-- **Buying?** Plans and checkout are on the
-  [product site](https://title-desk.com/#buy).
+- **Evaluating?** Read the current [evaluation status](docs/trials.md). A future
+  evaluation build will be time-limited, with no card required.
+- **Buying?** Plans remain visible on the [product site](https://title-desk.com/#buy),
+  but self-service checkout is paused during qualification.
 - **Deploying across a land department?** Email
   [sales@theharnesslab.com](mailto:sales@theharnesslab.com) and we will set it up rather
   than issuing individual trials.
