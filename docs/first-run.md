@@ -2,9 +2,7 @@
 
 *Everything from first launch to reading a real assignment*
 
-> **Build status:** This guide describes the current product workflow. Public v0.1.3
-> is an unqualified archive and does not contain the current customer workflow. Use
-> this guide only with a build supplied with a current qualification record.
+> This guide describes TitleDesk Agent v0.2.8, the current release.
 
 > Install and activate first (see the installation guide), then work through the
 > steps below in order. Activation and periodic licence checks require a network
@@ -142,4 +140,4 @@ and shows which destinations are currently allowed to receive data.
 > [sales@theharnesslab.com](mailto:sales@theharnesslab.com) with the app version
 > and a screenshot that contains no title documents, credentials, or activation secrets.
 
-  **The Harness Lab** · TitleDesk Agent 0.1.3
+  **The Harness Lab** · TitleDesk Agent 0.2.8

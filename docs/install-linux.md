@@ -8,15 +8,14 @@ or similar), about 700 MB free, and an unlocked GNOME Keyring/libsecret or
 KWallet session. TitleDesk refuses to fall back to plaintext storage when no
 secure keyring is available.
 
-> **Current status:** Linux is outside the current macOS customer release. Public
-> v0.1.3 has no current clean-profile Linux runtime qualification. Do not deploy the
-> archived AppImage for customer work.
+> **Current release:** TitleDesk Agent v0.2.8 — `TitleDesk-Agent-0.2.8-Linux.AppImage`,
+> with a detached GPG signature (`.AppImage.asc`) from The Harness Lab release key.
 
-## 1. Obtain a qualified build
+## 1. Obtain the current build
 
-Use only a build supplied with a release-specific qualification record. The
-[v0.1.3 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.1.3)
-is retained as an archive, not as the current customer download.
+Download through [title-desk.com/download](https://title-desk.com/download/), or
+take the same file from the [v0.2.8 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8). The first time you run the
+AppImage it adds itself to your applications menu.
 
 ## 2. Verify what you downloaded
 

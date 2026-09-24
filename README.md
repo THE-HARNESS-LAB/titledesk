@@ -37,25 +37,23 @@ rows, unsupported findings, and deliverable corrections against your existing pr
 
 ---
 
-## Build qualification
+## Downloads
 
-Customer downloads are temporarily unavailable while the current customer build completes
-packaged and native-platform qualification. Public release v0.1.3 is an archive for
-engineering evaluation. It is not the current customer release and should not be deployed
-for production work.
+**Current release: [TitleDesk Agent v0.2.8](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8)** — released 2026-09-24.
+Customers download through [title-desk.com/download](https://title-desk.com/download/), which serves these same
+files behind a trial, a seat purchase, or an Enterprise demo; the release record here is the published source
+of the bytes and their checksums.
 
-| Archived v0.1.3 target | Current audit status |
+| You have | Take |
 |---|---|
-| **macOS 12+** (Apple Silicon) | Reached the activation screen in an isolated smoke test, but lacks the current customer workflow and remains unsigned and unnotarized |
-| **macOS** (Intel) | Has not passed native Intel execution; the archive contains an arm64-only native dependency |
-| **Windows 10 / 11** (64-bit) | Has no current native install, SmartScreen, or end-to-end workflow qualification and is unsigned |
-| **Linux** (64-bit x86) | Has no current clean-profile runtime qualification and is outside the current macOS customer release |
+| A Mac with Apple silicon (M1 or newer) | `TitleDesk-Agent-0.2.8-macOS-Apple-Silicon.dmg` — Developer ID signed, notarized, stapled |
+| An Intel Mac | `TitleDesk-Agent-0.2.8-macOS-Intel.dmg` — Developer ID signed, notarized, stapled |
+| Windows 10 / 11 (64-bit) | `TitleDesk-Agent-0.2.8-Windows-Setup.exe` — Authenticode-signed (Azure Artifact Signing), RFC 3161 timestamp |
+| Linux (x86_64) | `TitleDesk-Agent-0.2.8-Linux.AppImage` — detached GPG signature `.AppImage.asc`, release key `harnesslab-release-signing.asc` |
 
-**[View the archived v0.1.3 release record](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.1.3)**
-
-The archive includes a `SHA256SUMS` manifest. A matching checksum establishes which bytes
-were published; it does not establish that the installer is signed, current, compatible
-with a computer, or qualified for customer work.
+Every release carries `SHA256SUMS` and `SHA256SUMS.asc`. A matching checksum establishes which bytes were
+published; the signatures establish who published them. Installed copies of 0.2.4 and later update themselves
+to the current release the next time they are quit.
 
 **Install guides:** [Windows](docs/install-windows.md) ·
 [macOS](docs/install-macos.md) · [Linux](docs/install-linux.md) ·
@@ -248,14 +246,15 @@ and by whom, what the deliverable must contain, which sources are authoritative.
 
 ## Try it
 
-TitleDesk is commercial software; customer builds activate against a licence. New
-evaluation and purchase fulfillment is paused until the current customer build finishes
-qualification.
+TitleDesk is commercial software; customer builds activate against a licence issued
+at [title-desk.com/download](https://title-desk.com/download/).
 
-- **Evaluating?** Read the current [evaluation status](docs/trials.md). A future
-  evaluation build will be time-limited, with no card required.
-- **Buying?** Plans remain visible on the [product site](https://title-desk.com/#buy),
-  but self-service checkout is paused during qualification.
+- **Evaluating?** Start the 7-day Individual trial there (every feature, one computer;
+  your card is verified with a $1 charge that is refunded immediately), or request the
+  14-day Enterprise demo (free, no card, up to 5 computers). See [evaluating](docs/trials.md).
+- **Buying?** The Individual seat is $199 a month and Enterprise seats are $349 per seat
+  per month on a 12-month contract; both check out on the same page and the activation
+  code arrives by email.
 - **Deploying across a land department?** Email
   [sales@theharnesslab.com](mailto:sales@theharnesslab.com) and we will set it up rather
   than issuing individual trials.

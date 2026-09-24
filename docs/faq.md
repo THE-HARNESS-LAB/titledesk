@@ -2,9 +2,12 @@
 
 ### Can I download the current customer build?
 
-Not yet. Customer downloads and self-service checkout are paused while the current
-build completes packaged and native-platform qualification. Public v0.1.3 is an
-engineering-evaluation archive, not the current customer release.
+Yes. The current release is TitleDesk Agent v0.2.8. Download it through
+[title-desk.com/download](https://title-desk.com/download/) with a 7-day Individual
+trial, a seat purchase, or a 14-day Enterprise demo; the same files and their
+checksums are published on the [v0.2.8 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8). macOS images are
+Developer ID signed and notarized, the Windows installer is Authenticode-signed,
+and the Linux AppImage carries a detached GPG signature.
 
 ### Do my title documents go to the cloud?
 

@@ -2,15 +2,13 @@
 
 **Requires:** Windows 10 or 11, 64-bit. About 700 MB free.
 
-> **Current status:** Windows customer downloads are paused. Public v0.1.3 is an
-> unsigned engineering-evaluation archive with no current native Windows install,
-> SmartScreen, or end-to-end workflow qualification. Do not deploy it for customer work.
+> **Current release:** TitleDesk Agent v0.2.8 — `TitleDesk-Agent-0.2.8-Windows-Setup.exe`,
+> Authenticode-signed (publisher **Spencer Teague**) with an RFC 3161 timestamp.
 
-## 1. Obtain a qualified build
+## 1. Obtain the current build
 
-Use only a build supplied with a release-specific qualification record. The
-[v0.1.3 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.1.3)
-is retained as an archive, not as the current customer download.
+Download through [title-desk.com/download](https://title-desk.com/download/), or take
+the same installer from the [v0.2.8 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8).
 
 ## 2. Verify what you downloaded
 
@@ -41,10 +39,11 @@ Activation emails come from **`licenses@theharnesslab.com`**.
 
 ## About SmartScreen
 
-An unsigned installer may cause Windows to show *"Windows protected your PC."*
-
-Do not use **More info → Run anyway** as a substitute for current native qualification
-or an organizational approval. A checksum verifies file identity, not release readiness.
+The installer is signed, but a newly signed publisher builds reputation with
+SmartScreen over time, so Windows may still show *"Windows protected your PC."*
+Click **More info**: it must name the publisher **Spencer Teague**. If it does,
+**Run anyway** is safe; if it shows *Unknown publisher*, stop, verify the SHA-256 of a
+fresh download, and contact support.
 
 If you are deploying across a company and would rather not have your landmen see
 that prompt at all, contact
@@ -53,9 +52,9 @@ code-signing status and managed-deployment options before rollout.
 
 ## If it will not install
 
-**Blocked by company policy** — many land departments restrict unsigned or
-unknown installers. Send your IT administrator this page and the SHA256; they
-can allow the specific hash.
+**Blocked by company policy** — some land departments restrict installers by
+publisher or hash. Send your IT administrator this page, the publisher name
+(Spencer Teague) and the SHA-256; they can allow the specific signature or hash.
 
 **Installer starts then disappears** — this is usually an antivirus quarantine.
 Check its quarantine log before re-running.

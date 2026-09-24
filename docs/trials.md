@@ -1,28 +1,28 @@
 # Evaluating TitleDesk
 
-TitleDesk is licensed software. New evaluation fulfillment is temporarily paused
-while the current customer build completes packaged and native-platform qualification.
-Public v0.1.3 is an engineering-evaluation archive, not the current customer release.
+TitleDesk is licensed software. Two evaluations are available from
+[title-desk.com/download](https://title-desk.com/download/):
 
-## How to register interest
+- **The 7-day Individual trial.** Every feature, one computer, free for 7 days. Your
+  card is verified with a $1 charge that is refunded immediately; cancel any time from
+  [title-desk.com/manage](https://title-desk.com/manage/). The activation code appears
+  on the next page and in your email.
+- **The 14-day Enterprise demo.** Free, no card. Spencer calls you to set it up, walks
+  through the workflow and troubleshoots; the demo runs 14 days from the first
+  activation on up to 5 computers.
 
-Email **[sales@theharnesslab.com](mailto:sales@theharnesslab.com)** with:
-
-- Your name and company
-- Which platform (Windows, macOS or Linux)
-- Roughly how many people would be evaluating
-
-We will reply with current availability. No activation link or customer build is
-promised until the relevant package passes qualification.
+Deploying across a land department? Email
+**[sales@theharnesslab.com](mailto:sales@theharnesslab.com)** and we will set it up
+rather than issuing individual trials.
 
 ## How a trial licence behaves
 
-- **Time-limited.** It stops working when the term ends. Nothing to cancel and
-  no card required.
+- **Time-limited.** It stops working when the term ends and asks for a new
+  activation code.
 - **Tied to your computer.** The activation binds to the machine you activate
   on. Tell us if you need to move it.
-- **Current workflow.** A qualified trial is intended to exercise the same workflow
-  as the corresponding customer build; its time limit is the licensing difference.
+- **The same build.** A trial runs the same signed release as a paid seat; its
+  time limit is the only licensing difference.
 - **Works offline.** Once activated, TitleDesk keeps working without a network
   connection for an extended period, so a trial in a courthouse basement does
   not fail.
