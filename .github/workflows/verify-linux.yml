@@ -1,0 +1,55 @@
+name: Verify Linux customer package
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag
+        required: true
+        type: string
+      asset:
+        description: Linux AppImage asset filename
+        required: true
+        type: string
+      sha256:
+        description: Exact expected SHA256
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  packaged-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      RELEASE_TAG: ${{ inputs.tag }}
+      RELEASE_ASSET: ${{ inputs.asset }}
+      EXPECTED_SHA256: ${{ inputs.sha256 }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate release inputs
+        shell: bash
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          [[ "$RELEASE_ASSET" =~ ^TitleDesk-Agent-[0-9]+\.[0-9]+\.[0-9]+-Linux(-CANDIDATE)?\.AppImage$ ]]
+          [[ "$EXPECTED_SHA256" =~ ^[0-9a-f]{64}$ ]]
+      - name: Obtain and verify exact package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p candidate
+          gh release download "$RELEASE_TAG" --repo THE-HARNESS-LAB/titledesk --pattern "$RELEASE_ASSET" --dir candidate
+          printf '%s  %s\n' "$EXPECTED_SHA256" "candidate/$RELEASE_ASSET" > candidate/SHA256SUMS
+          sha256sum --check candidate/SHA256SUMS
+          chmod +x "candidate/$RELEASE_ASSET"
+          cd candidate
+          "./$RELEASE_ASSET" --appimage-extract > extraction.log
+      - name: Verify packaged OCR and native MCP runtime
+        run: node tools/packaged-child-process-gate.mjs candidate/squashfs-root proof/linux-packaged
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: linux-packaged-runtime-proof
+          path: proof/linux-packaged/
+          retention-days: 14
