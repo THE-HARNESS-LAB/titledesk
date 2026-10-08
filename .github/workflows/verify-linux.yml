@@ -16,6 +16,8 @@ on:
         type: string
 permissions:
   contents: read
+  id-token: write
+  attestations: write
 jobs:
   packaged-runtime:
     runs-on: ubuntu-24.04
@@ -47,6 +49,17 @@ jobs:
           "./$RELEASE_ASSET" --appimage-extract > extraction.log
       - name: Verify packaged OCR and native MCP runtime
         run: node tools/packaged-child-process-gate.mjs candidate/squashfs-root proof/linux-packaged
+      - name: Sign the passing runtime verification
+        id: attest
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: candidate/${{ inputs.asset }}
+          predicate-type: https://theharnesslab.com/attestations/packaged-runtime/v1
+          predicate-path: proof/linux-packaged/gate-result.json
+      - name: Preserve signature bundle
+        env:
+          BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
+        run: cp "$BUNDLE_PATH" proof/linux-packaged/runtime-attestation.sigstore.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
