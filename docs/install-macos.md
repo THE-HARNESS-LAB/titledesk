@@ -3,7 +3,7 @@
 **Requires:** macOS 12 (Monterey) or later. Separate Apple Silicon (`arm64`)
 and Intel (`x64`) targets require separate native qualification. About 700 MB free.
 
-> **Current release:** TitleDesk Agent v0.2.8 — separate Apple Silicon and Intel
+> **Current release:** TitleDesk Agent v0.2.13 — separate Apple Silicon and Intel
 > images, each Developer ID signed, notarized and stapled.
 
 TitleDesk will tell you plainly if your Mac is too old, rather than installing
@@ -12,7 +12,7 @@ and failing on launch.
 ## 1. Obtain the current build
 
 Download through [title-desk.com/download](https://title-desk.com/download/), or take
-the same image from the [v0.2.8 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8). Apple menu → About This Mac: if the
+the same image from the [v0.2.13 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.13). Apple menu → About This Mac: if the
 Chip line says Apple M-anything, take Apple Silicon; otherwise take Intel.
 
 ## 2. Verify what you downloaded

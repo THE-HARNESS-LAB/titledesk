@@ -2,13 +2,13 @@
 
 **Requires:** Windows 10 or 11, 64-bit. About 700 MB free.
 
-> **Current release:** TitleDesk Agent v0.2.8 — `TitleDesk-Agent-0.2.8-Windows-Setup.exe`,
+> **Current release:** TitleDesk Agent v0.2.13 — `TitleDesk-Agent-0.2.13-Windows-Setup.exe`,
 > Authenticode-signed (publisher **Spencer Teague**) with an RFC 3161 timestamp.
 
 ## 1. Obtain the current build
 
 Download through [title-desk.com/download](https://title-desk.com/download/), or take
-the same installer from the [v0.2.8 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8).
+the same installer from the [v0.2.13 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.13).
 
 ## 2. Verify what you downloaded
 

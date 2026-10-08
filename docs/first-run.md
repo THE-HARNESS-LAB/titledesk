@@ -2,7 +2,7 @@
 
 *Everything from first launch to reading a real assignment*
 
-> This guide describes TitleDesk Agent v0.2.8, the current release.
+> This guide describes TitleDesk Agent v0.2.13, the current release.
 
 > Install and activate first (see the installation guide), then work through the
 > steps below in order. Activation and periodic licence checks require a network
@@ -140,4 +140,4 @@ and shows which destinations are currently allowed to receive data.
 > [sales@theharnesslab.com](mailto:sales@theharnesslab.com) with the app version
 > and a screenshot that contains no title documents, credentials, or activation secrets.
 
-  **The Harness Lab** · TitleDesk Agent 0.2.8
+  **The Harness Lab** · TitleDesk Agent 0.2.13

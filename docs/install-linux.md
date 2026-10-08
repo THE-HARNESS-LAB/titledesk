@@ -1,6 +1,6 @@
 # Install TitleDesk on Linux
 
-The archived Linux artifact is an **AppImage** — a single file that runs without
+The Linux download is an **AppImage** — a single file that runs without
 installation and without root.
 
 **Requires:** a 64-bit x86 Linux desktop (Ubuntu 22.04+, Fedora 38+, Debian 12+
@@ -8,13 +8,13 @@ or similar), about 700 MB free, and an unlocked GNOME Keyring/libsecret or
 KWallet session. TitleDesk refuses to fall back to plaintext storage when no
 secure keyring is available.
 
-> **Current release:** TitleDesk Agent v0.2.8 — `TitleDesk-Agent-0.2.8-Linux.AppImage`,
-> with a detached GPG signature (`.AppImage.asc`) from The Harness Lab release key.
+> **Current release:** TitleDesk Agent v0.2.13 — `TitleDesk-Agent-0.2.13-Linux.AppImage`,
+> with a signed GitHub verification receipt from native Ubuntu OCR and AI-tool checks.
 
 ## 1. Obtain the current build
 
 Download through [title-desk.com/download](https://title-desk.com/download/), or
-take the same file from the [v0.2.8 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8). The first time you run the
+take the same file from the [v0.2.13 release page](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.13). The first time you run the
 AppImage it adds itself to your applications menu.
 
 ## 2. Verify what you downloaded
@@ -29,11 +29,17 @@ sha256sum -c SHA256SUMS --ignore-missing
 You should see `OK`. If you see `FAILED`, stop and email
 [sales@theharnesslab.com](mailto:sales@theharnesslab.com) — do not run the file.
 
+Verify the signed runtime receipt using GitHub CLI:
+
+```bash
+gh attestation verify TitleDesk-Agent-0.2.13-Linux.AppImage --repo THE-HARNESS-LAB/titledesk --predicate-type https://theharnesslab.com/attestations/packaged-runtime/v1 --signer-workflow THE-HARNESS-LAB/titledesk/.github/workflows/verify-linux.yml
+```
+
 ## 3. Make it executable and run it
 
 ```bash
-chmod +x "TitleDesk-Agent-<version>-linux-x86_64.AppImage"
-./"TitleDesk-Agent-<version>-linux-x86_64.AppImage"
+chmod +x "TitleDesk-Agent-0.2.13-Linux.AppImage"
+./"TitleDesk-Agent-0.2.13-Linux.AppImage"
 ```
 
 ## 4. Activate
@@ -53,7 +59,7 @@ somewhere permanent and create a launcher:
 
 ```bash
 mkdir -p ~/Applications ~/.local/share/applications
-mv "TitleDesk-Agent-<version>-linux-x86_64.AppImage" ~/Applications/TitleDesk-Agent.AppImage
+mv "TitleDesk-Agent-0.2.13-Linux.AppImage" ~/Applications/TitleDesk-Agent.AppImage
 
 cat > ~/.local/share/applications/titledesk-agent.desktop <<'EOF'
 [Desktop Entry]

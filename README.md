@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="#build-qualification"><strong>Build qualification status</strong></a><br>
+  <a href="#downloads"><strong>Download v0.2.13</strong></a><br>
   <sub>
     <a href="https://title-desk.com/">Product site</a> ·
     <a href="https://title-desk.com/#buy">Pricing</a> ·
@@ -39,20 +39,27 @@ rows, unsupported findings, and deliverable corrections against your existing pr
 
 ## Downloads
 
-**Current release: [TitleDesk Agent v0.2.8](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.8)** — released 2026-09-24.
+**Current release: [TitleDesk Agent v0.2.13](https://github.com/THE-HARNESS-LAB/titledesk/releases/tag/v0.2.13)** — released 2026-10-08.
 Customers download through [title-desk.com/download](https://title-desk.com/download/), which serves these same
 files behind a trial, a seat purchase, or an Enterprise demo; the release record here is the published source
-of the bytes and their checksums.
+of the bytes and their checksums. Existing customers can choose **I already have a code** on the download page and upgrade without a new checkout or card entry.
+
+Version 0.2.13 adds assignment recovery, research time controls, supplied-record reuse and improved ownership and net-acre calculations. Packaged OCR and all 35 AI tools passed native checks on Apple silicon, Intel Mac, Windows and Linux.
 
 | You have | Take |
 |---|---|
-| A Mac with Apple silicon (M1 or newer) | `TitleDesk-Agent-0.2.8-macOS-Apple-Silicon.dmg` — Developer ID signed, notarized, stapled |
-| An Intel Mac | `TitleDesk-Agent-0.2.8-macOS-Intel.dmg` — Developer ID signed, notarized, stapled |
-| Windows 10 / 11 (64-bit) | `TitleDesk-Agent-0.2.8-Windows-Setup.exe` — Authenticode-signed (Azure Artifact Signing), RFC 3161 timestamp |
-| Linux (x86_64) | `TitleDesk-Agent-0.2.8-Linux.AppImage` — detached GPG signature `.AppImage.asc`, release key `harnesslab-release-signing.asc` |
+| A Mac with Apple silicon (M1 or newer) | `TitleDesk-Agent-0.2.13-macOS-Apple-Silicon.dmg` — Developer ID signed, notarized, stapled |
+| An Intel Mac | `TitleDesk-Agent-0.2.13-macOS-Intel.dmg` — Developer ID signed, notarized, stapled |
+| Windows 10 / 11 (64-bit) | `TitleDesk-Agent-0.2.13-Windows-Setup.exe` — Authenticode-signed (Azure Artifact Signing), RFC 3161 timestamp |
+| Linux (x86_64) | `TitleDesk-Agent-0.2.13-Linux.AppImage` — native Ubuntu package verification with a signed GitHub attestation |
 
-Every release carries `SHA256SUMS` and `SHA256SUMS.asc`. A matching checksum establishes which bytes were
-published; the signatures establish who published them. Installed copies of 0.2.4 and later update themselves
+This release carries `SHA256SUMS`. The Mac images are Developer ID signed, notarized and stapled; Windows is Authenticode signed and timestamped. The Linux package has a signed verification receipt from its native Ubuntu runtime checks. Verify it with:
+
+```sh
+gh attestation verify TitleDesk-Agent-0.2.13-Linux.AppImage --repo THE-HARNESS-LAB/titledesk --predicate-type https://theharnesslab.com/attestations/packaged-runtime/v1 --signer-workflow THE-HARNESS-LAB/titledesk/.github/workflows/verify-linux.yml
+```
+
+A matching checksum identifies the published bytes. Installed copies of 0.2.4 and later update themselves
 to the current release the next time they are quit.
 
 **Install guides:** [Windows](docs/install-windows.md) ·
@@ -192,9 +199,7 @@ version:
 
 ### Working with AI — or without it
 
-TitleDesk is **fully functional with no AI connected**. Reading documents, the runsheet,
-ownership, deadlines, billing and report generation are all local. Connecting a model
-only adds drafting assistance.
+Local OCR, project files, exact-fraction arithmetic, deadlines, billing and report assembly run on your computer. Automated assignment research and examination use the connected AI you select, including a supported existing ChatGPT/Codex or Claude subscription.
 
 When one *is* connected:
 
